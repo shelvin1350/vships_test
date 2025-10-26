@@ -14,20 +14,16 @@ html, body {
     font-family: "Arial", sans-serif;
     color: #0f2926;
 }
-/* Keep the background image as-is */
 body {
     background-image: url('assets/images/bg1.PNG');
     background-repeat: no-repeat;
-    /* CHANGE 'contain' to 'cover' */
     background-position: center center;
     background-size: cover; 
-    /* ADD background-attachment: fixed; to keep the background in place during scroll (optional) */
     background-attachment: fixed; 
     position: relative;
     overflow: hidden;
     width: 100%;
 }
-/* Overlay text container */
 .text-layer {
     position: absolute;
     top: 0;
@@ -41,7 +37,6 @@ body {
     padding: 5%;
     box-sizing: border-box;
 }
-/* Main message */
 .main-text {
     position: absolute;
     top: 10%;
@@ -54,7 +49,6 @@ body {
 .main-text strong {
     font-weight: bold;
 }
-/* Contact info bottom-left */
 .contact {
     position: absolute;
     bottom: 10%;
@@ -67,8 +61,6 @@ body {
 .contact strong {
     font-weight: bold;
 }
- 
-/* NEW CSS for Navigation Arrows */
 .navigation {
     position: absolute;
     bottom: 04%;
@@ -81,8 +73,6 @@ body {
     width: auto;
     cursor: pointer;
 }
-
-/* NEW CSS for Home Icon */
 .home-icon {
     position: absolute;
     top: 3%;
@@ -93,11 +83,106 @@ body {
     width: auto;
     cursor: pointer;
 }
+
+/* -----------------------------------------
+   RESPONSIVE DESIGN ADDITIONS BELOW
+----------------------------------------- */
+
+/* Tablets and small laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .main-text {
+        font-size: 28px;
+        width: 50%;
+        right: 20%;
+        top: 12%;
+    }
+    .contact {
+        font-size: 18px;
+        bottom: 8%;
+    }
+    .navigation img, .home-icon img {
+        height: 35px;
+    }
+}
+
+/* Mobile landscape and medium devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .main-text {
+        font-size: 22px;
+        width: 70%;
+        right: 10%;
+        top: 15%;
+        line-height: 1.5;
+    }
+    .contact {
+        font-size: 16px;
+        bottom: 7%;
+        left: 6%;
+    }
+    .navigation img, .home-icon img {
+        height: 30px;
+    }
+}
+
+/* Small mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+    body {
+        background-size: cover;
+        overflow-y: auto;
+    }
+    .main-text {
+        position: relative;
+        width: 90%;
+        right: 0;
+        top: 20%;
+        margin: 0 auto;
+        text-align: left;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    .contact {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 30px;
+        width: 90%;
+        font-size: 16px;
+    }
+    .navigation {
+        position: relative;
+        bottom: auto;
+        left: 0;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .navigation img {
+        height: 28px;
+    }
+    .home-icon {
+        top: 4%;
+        left: 4%;
+    }
+    .home-icon img {
+        height: 30px;
+    }
+}
+
+/* Ultra-small devices or very narrow screens (max-width: 360px) */
+@media (max-width: 360px) {
+    .main-text {
+        font-size: 16px;
+    }
+    .contact {
+        font-size: 14px;
+    }
+    .navigation img {
+        height: 25px;
+    }
+}
 </style>
 </head>
 <body>
 <div class="text-layer">
-    <!-- New Home Icon -->
     <div class="home-icon">
         <a href="first.html">
             <img src="assets/images/home.PNG" alt="Home">

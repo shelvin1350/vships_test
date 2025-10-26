@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mumbai Visit - Nemo Guide</title>
+<style>
+/* Existing CSS */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Arial", sans-serif;
+    color: #0f2926;
+}
+/* Keep the background image as-is */
+body {
+    background-image: url('assets/images/bg1.PNG');
+    background-repeat: no-repeat;
+    /* CHANGE 'contain' to 'cover' */
+    background-position: center center;
+    background-size: cover; 
+    /* ADD background-attachment: fixed; to keep the background in place during scroll (optional) */
+    background-attachment: fixed; 
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+/* Overlay text container */
+.text-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5%;
+    box-sizing: border-box;
+}
+/* Main message */
+.main-text {
+    position: absolute;
+    top: 10%;
+    right: 25%;
+    width: 40%;
+    font-size: 35px;
+    line-height: 1.6;
+    color: #0f2926;
+}
+.main-text strong {
+    font-weight: bold;
+}
+/* Contact info bottom-left */
+.contact {
+    position: absolute;
+    bottom: 10%;
+    left: 04%;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #0f2926;
+    line-height: 1.6;
+}
+.contact strong {
+    font-weight: bold;
+}
+ 
+/* NEW CSS for Navigation Arrows */
+.navigation {
+    position: absolute;
+    bottom: 04%;
+    left: 04%;
+    display: flex;
+    gap: 15px;
+}
+.navigation img {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+}
+
+/* NEW CSS for Home Icon */
+.home-icon {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+}
+.home-icon img {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="text-layer">
+    <!-- New Home Icon -->
+    <div class="home-icon">
+        <a href="first.html">
+            <img src="assets/images/home.PNG" alt="Home">
+        </a>
+    </div>
+
+    <div class="main-text">
+        <p>
+            Hi René,<br>
+            I’m <strong>Nemo</strong> your guide for your Mumbai visit.<br><br>
+            “Click the next button for an overview of the day's agenda, on clicking the human icon adjacent to the event you will get details of the event, the bio pic. &amp; additional information.<br>
+            Hope you have an enjoyable visit.”
+        </p>
+    </div>
+    
+    <div class="contact">
+        <p>
+            <strong><b>Contact :</b></strong><br>
+            <b>Sriram Gopalakrishnan –</b><br>
+            <b>Ph +91 9740100887</b><br>
+            <b>Director Global Shared Services &amp;<br>
+            Mumbai Site Lead</b>
+        </p>
+    </div>
+ 
+    <div class="navigation">
+        <a href="3.html">
+            <img src="assets/images/right.PNG" alt="Next Day">
+        </a>
+    </div>
+</div>
+</body>
+</html>

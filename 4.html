@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda for the Mumbai Visit</title>
+<style>
+/* Existing CSS */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Arial", sans-serif;
+    color: #0f2926;
+}
+/* Keep the background image as-is */
+body {
+    background-image: url('assets/images/111.PNG');
+    background-repeat: no-repeat;
+    /* CHANGE 'contain' to 'cover' */
+    background-position: center center;
+    background-size: cover; 
+    /* ADD background-attachment: fixed; to keep the background in place during scroll (optional) */
+    background-attachment: fixed; 
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+/* Overlay text container */
+.text-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+    .main-text {
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      font-size: 28px;
+      line-height: 1.8;
+      color: #0f2926;
+    }
+
+    .main-text h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      margin-top: -40px;
+      font-family: 'Times New Roman', Times, serif;
+      margin-left: -60px;
+    }
+
+    .agenda-item {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      margin-left: 300px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .agenda-item span {
+      font-weight: normal;
+      margin-left: 10px;
+      background-color: #fff67b;
+      padding: 2px 6px;
+    }
+
+    .contact {
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      font-size: 20px;
+      color: #0f2926;
+      line-height: 1.8;
+      text-align: left;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .contact strong {
+      font-weight: bold;
+    }
+
+    /* ------------------- RESPONSIVE STYLES ------------------- */
+
+    /* Tablets (width <= 1024px) */
+    @media (max-width: 1024px) {
+      .main-text h1 {
+        font-size: 30px;
+        margin-left: -30px;
+      }
+      .agenda-item {
+        font-size: 26px;
+        margin-left: 150px;
+      }
+      .contact {
+        font-size: 18px;
+        right: 5%;
+      }
+    }
+
+    /* Mobile devices (width <= 600px) */
+    @media (max-width: 600px) {
+      body {
+        background-size: cover;
+      }
+      .main-text {
+        top: 10%;
+        left: 5%;
+      }
+      .main-text h1 {
+        font-size: 22px;
+        margin-left: 0;
+        margin-top: 0;
+      }
+      .agenda-item {
+        font-size: 18px;
+        margin-left: 40px;
+        margin-bottom: 10px;
+      }
+      .agenda-item span {
+        padding: 2px 4px;
+      }
+      .contact {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        text-align: center;
+        font-size: 16px;
+        margin-top: 40px;
+      }
+    }
+    .home-icon {
+        position: absolute;
+        top: 3%;
+        left: 3%;
+    }
+    .home-icon img {
+        height: 40px;
+        width: auto;
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="text-layer">
+    <div class="home-icon">
+        <a href="index.html">
+            <img src="assets/images/home.PNG" alt="Home">
+        </a>
+    </div>
+    <div class="main-text">
+      <h1>Agenda for the Mumbai Visit</h1>
+      <div class="agenda-item">28<sup>th</sup> October 2025 <span>Slide 4</span></div>
+      <div class="agenda-item">29<sup>th</sup> October 2025 <span>Slide 5</span></div>
+      <div class="agenda-item">30<sup>th</sup> October 2025 <span>Slide 6</span></div>
+    </div>
+
+    <div class="contact">
+      <p><strong><b>Key Contact :</b></strong><br>
+      <b>Sriram Gopalakrishnan – Ph +91 9740100887<br>
+      Director Global Shared Services &amp; Mumbai Site Lead<br><br>
+      Capt. Venkatesh Gomatham – Ph +91 xxxxxxxx</b>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

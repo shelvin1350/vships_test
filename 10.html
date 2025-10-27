@@ -15,10 +15,11 @@
       font-family: Arial, sans-serif;
       background-color: #0d3d3d;
       color: white;
+      overflow: hidden;
     }
 
     .container {
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
     }
@@ -49,19 +50,24 @@
     }
 
     .back-button {
-      background-color: #68da6a;
+      background-color: #67da6a;
       color: black;
       border: none;
-      padding: 10px 30px;
+      padding: 12px 24px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
-      text-decoration: underline;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .back-button:hover {
-      background-color: #5bc85d;
+      background-color: #58c05b;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
     .header-title {
@@ -72,21 +78,22 @@
     .content {
       display: flex;
       flex: 1;
+      overflow: hidden;
     }
 
     .left-section {
-      flex: 0 0 250px;
+      flex: 0 0 220px;
       background-color: #0a2f2f;
-      padding: 40px 20px;
+      padding: 30px 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: 15px;
     }
 
     .person-photo {
-      width: 160px;
-      height: 180px;
+      width: 140px;
+      height: 160px;
       background-color: white;
       overflow: hidden;
     }
@@ -101,49 +108,51 @@
       color: black;
       text-align: center;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 16px;
       width: 100%;
+      max-height: 60px;
     }
 
     .middle-section {
       flex: 1;
-      padding: 40px 60px;
+      padding: 30px 40px;
       background-color: #0a2f2f;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      overflow-y: auto;
     }
 
     .person-name {
       color: #b3c100;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: bold;
-      margin-bottom: 25px;
-    }
-
-    .person-details {
-      font-size: 18px;
-      line-height: 1.5;
-    }
-
-    .person-details p {
       margin-bottom: 20px;
     }
 
+    .person-details {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .person-details p {
+      margin-bottom: 15px;
+    }
+
     .right-section {
-      flex: 0 0 300px;
+      flex: 0 0 280px;
       background-color: #0a2f2f;
-      padding: 40px 30px;
+      padding: 30px 25px;
       border-left: 2px solid #24643f;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 15px;
     }
 
     .address-box {
       background-color: #b3c100;
-      padding: 20px;
-      font-size: 18px;
+      padding: 15px;
+      font-size: 16px;
       font-weight: bold;
       text-align: center;
     }
@@ -309,6 +318,7 @@
     </div>
 
     <div class="navigation">
+      <!-- <div style="color: #ffffff; font-size: 14px; margin-bottom: 10px; text-align: right;">OCT 2025</div> -->
       <a href="11.html" class="next-btn">Next</a>
       <img src="assets/images/V.ship_logo_green.svg" alt="Company Logo">
     </div>

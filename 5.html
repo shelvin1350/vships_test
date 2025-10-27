@@ -64,7 +64,7 @@ body {
       font-size: 28px;
       font-weight: bold;
       margin-bottom: 15px;
-      margin-left: 180px;
+      margin-left: 70px;
       font-family: 'Times New Roman', Times, serif;
       line-height: 1.4;
     }
@@ -90,6 +90,112 @@ body {
     .contact strong {
       font-weight: bold;
     }
+    .home-icon {
+        position: absolute;
+        top: 3%;
+        left: 3%;
+    }
+    .home-icon img {
+        height: 40px;
+        width: auto;
+        cursor: pointer;
+    }
+    
+        .navigation {
+        position: absolute;
+        bottom: 04%;
+        right: 04%;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    .back-navigation {
+        position: absolute;
+        bottom: 04%;
+        left: 04%;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    .next-btn, .back-btn {
+        background-color: #67da6a;
+        color: black;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .next-btn:hover, .back-btn:hover {
+        background-color: #5bc85e;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .navigation img {
+        height: 40px;
+        width: auto;
+        cursor: pointer;
+    }
+    
+    .sideline-meetings {
+        position: absolute;
+        bottom: 36%;
+        right: 04%;
+        background-color: rgba(255, 255, 255, 0.95);
+        border: 2px solid #0f2926;
+        border-radius: 8px;
+        padding: 15px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #0f2926;
+        width: 250px;
+        max-width: 90vw;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .sideline-meetings h3 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0f2926;
+    }
+    
+    .sideline-meetings .subtitle {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+    
+    .meeting-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        gap: 8px;
+    }
+    
+    .meeting-item .client-name {
+        font-weight: bold;
+        flex: 1;
+    }
+    
+    .meeting-item .slide-info {
+        background-color: #fff67b;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .meeting-item .icon {
+        color: #67da6a;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
     /* ------------------- RESPONSIVE STYLES ------------------- */
 
@@ -100,7 +206,7 @@ body {
       }
       .agenda-item {
         font-size: 24px;
-        margin-left: 100px;
+        margin-left: 80px;
       }
       .next-btn {
         padding: 11px 22px;
@@ -125,7 +231,7 @@ body {
       }
       .agenda-item {
         font-size: 22px;
-        margin-left: 60px;
+        margin-left: 30px;
         margin-bottom: 12px;
       }
       .contact {
@@ -177,7 +283,7 @@ body {
         font-size: 14px;
       }
       .sideline-meetings {
-        bottom: 110px;
+        bottom: 25%;
         right: 6%;
         width: 230px;
         padding: 13px;
@@ -312,6 +418,8 @@ body {
         max-width: none;
       }
     }
+ 
+
 
     /* Landscape phones (height <= 500px and landscape orientation) */
     @media (max-height: 500px) and (orientation: landscape) {
@@ -350,112 +458,7 @@ body {
         font-size: 12px;
       }
     }
-    .home-icon {
-        position: absolute;
-        top: 3%;
-        left: 3%;
-    }
-    .home-icon img {
-        height: 40px;
-        width: auto;
-        cursor: pointer;
-    }
     
-        .navigation {
-        position: absolute;
-        bottom: 04%;
-        right: 04%;
-        display: flex;
-        gap: 15px;
-        align-items: center;
-    }
-    .back-navigation {
-        position: absolute;
-        bottom: 04%;
-        left: 04%;
-        display: flex;
-        gap: 15px;
-        align-items: center;
-    }
-    .next-btn, .back-btn {
-        background-color: #67da6a;
-        color: black;
-        padding: 12px 24px;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 500;
-        text-decoration: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .next-btn:hover, .back-btn:hover {
-        background-color: #5bc85e;
-        transform: translateY(-1px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .navigation img {
-        height: 40px;
-        width: auto;
-        cursor: pointer;
-    }
-    
-    .sideline-meetings {
-        position: absolute;
-        bottom: 120px;
-        right: 04%;
-        background-color: rgba(255, 255, 255, 0.95);
-        border: 2px solid #0f2926;
-        border-radius: 8px;
-        padding: 15px;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 16px;
-        line-height: 1.4;
-        color: #0f2926;
-        width: 250px;
-        max-width: 90vw;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .sideline-meetings h3 {
-        margin: 0 0 8px 0;
-        font-size: 18px;
-        font-weight: bold;
-        color: #0f2926;
-    }
-    
-    .sideline-meetings .subtitle {
-        font-size: 14px;
-        color: #666;
-        margin-bottom: 10px;
-    }
-    
-    .meeting-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-        gap: 8px;
-    }
-    
-    .meeting-item .client-name {
-        font-weight: bold;
-        flex: 1;
-    }
-    
-    .meeting-item .slide-info {
-        background-color: #fff67b;
-        padding: 2px 6px;
-        border-radius: 3px;
-        font-size: 14px;
-        font-weight: bold;
-    }
-    
-    .meeting-item .icon {
-        color: #67da6a;
-        font-size: 16px;
-        font-weight: bold;
-    }
   </style>
 </head>
 <body>
@@ -468,14 +471,13 @@ body {
     <div class="main-text">
       <h1> <span style="font-size: 43px;">Agenda for the Mumbai Visit - 29th October 2025</span></h1>
       <!-- <div class="agenda-item">02:00 PM - Pick up from Airport <a href="#"><img src="assets/images/pupil.svg" alt="Picture" style="height: 40px; vertical-align: middle;"></a></div> -->
-      <div class="agenda-item">08:00 AM – Travel to Mumbai Fort (Meeting with Pallonji) <a href="#"><img src="assets/images/pupil.svg" alt="Picture" style="height: 40px; vertical-align: middle;"></a></div>
-      <div class="agenda-item">10:00 AM – Meeting Client Pallonji <a href="#"><img src="assets/images/pupil.svg" alt="Picture" style="height: 40px; vertical-align: middle;"></a></div>
-      <div class="agenda-item">11:30 AM – Travel back to Hotel (The Westin Garden City) <a href="#"><img src="assets/images/pupil.svg" alt="Picture" style="height: 40px; vertical-align: middle;"></a></div>
-      <div class="agenda-item">01:00 PM – Lunch at The Westin Garden City <a href="#"><img src="assets/images/pupil.svg" alt="Picture" style="height: 40px; vertical-align: middle;"></a></div>
-      <div class="agenda-item">02:00 PM – Travel to NESCO Maritime Conference <a href="#"><img src="assets/images/pupil.svg" alt="Picture" style="height: 40px; vertical-align: middle;"></a></div>
-      <div class="agenda-item">04:00 PM – Hon'ble PM's address and other keynotes <a href="#"><img src="assets/images/pupil.svg" alt="Picture" style="height: 40px; vertical-align: middle;"></a></div>
-      <div class="agenda-item">05:35 PM – Global Maritime CEO Roundtable (closed door) <a href="#"><img src="assets/images/pupil.svg" alt="Picture" style="height: 40px; vertical-align: middle;"></a></div>
-      <div class="agenda-item">07:30 PM – Dinner for Participants <a href="#"><img src="assets/images/pupil.svg" alt="Picture" style="height: 40px; vertical-align: middle;"></a></div>
+      <div class="agenda-item">08:20 AM – Pick up from Hotel to V. Mumbai Office</div>
+      <div class="agenda-item">9:00 AM  – Mumbai Office Visit <a href="12.html"><img src="assets/images/pupil.svg" alt="Picture" style="height: 40px; vertical-align: middle;"></a></div>
+      <div class="agenda-item">01:45 PM – Travel to NESCO </div>
+      <div class="agenda-item">02:30 PM – Arrive at NESCO Maritime Conference</div>
+      <div class="agenda-item">04:00 PM – Hon’ble PM’s address and other keynotes – Hall 6 </div>
+      <div class="agenda-item">05:35 PM – Global Maritime CEO Roundtable (closed door) – Grande  </div>
+      <div class="agenda-item">07:30 PM – Dinner for  Participants  </div>
     </div>
 
     <div class="sideline-meetings">
@@ -483,12 +485,12 @@ body {
         <div class="subtitle">(Tentative)</div>
         <div class="meeting-item">
             <span class="client-name">Client ACT</span>
-            <img src="assets/images/pupil.svg" alt="Picture" style="height: 25px; vertical-align: middle;">
+            <a href="11.html"><img src="assets/images/pupil.svg" alt="Picture" style="height: 25px; vertical-align: middle;"></a>
             <!-- <span class="slide-info">Slide 11</span> -->
         </div>
         <div class="meeting-item">
             <span class="client-name">DG Shipping</span>
-            <img src="assets/images/pupil.svg" alt="Picture" style="height: 25px; vertical-align: middle;">
+            <a href="11.html"><img src="assets/images/pupil.svg" alt="Picture" style="height: 25px; vertical-align: middle;"></a>
             <!-- <span class="slide-info">Slide 11</span> -->
         </div>
     </div>

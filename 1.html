@@ -39,7 +39,7 @@ body {
 }
 .main-text {
 	position: absolute;
-	top: 10%;
+	top: 10vh;
 	right: 8%;
 	width: 60%;
 	font-size: 35px;
@@ -51,8 +51,8 @@ body {
 }
 .contact {
     position: absolute;
-    bottom: 10%;
-    left: 04%;
+    bottom: 10vh;
+    left: 4%;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     color: #0f2926;
@@ -63,8 +63,8 @@ body {
 }
 .navigation {
     position: absolute;
-    bottom: 04%;
-    right: 04%;
+    bottom: 4vh;
+    right: 4%;
     display: flex;
     gap: 15px;
     align-items: center;
@@ -94,7 +94,7 @@ body {
 }
 .home-icon {
     position: absolute;
-    top: 3%;
+    top: 3vh;
     left: 3%;
 }
 .home-icon img {
@@ -107,17 +107,38 @@ body {
    RESPONSIVE DESIGN ADDITIONS BELOW
 ----------------------------------------- */
 
-/* Tablets and small laptops (max-width: 1024px) */
-@media (max-width: 1024px) {
+/* Large tablets and small desktops (width <= 1200px) */
+@media (max-width: 1200px) {
     .main-text {
-        font-size: 28px;
-        width: 50%;
-        right: 20%;
-        top: 12%;
+        font-size: 32px;
+        width: 58%;
+        right: 10%;
+        top: 11vh;
     }
     .contact {
         font-size: 18px;
-        bottom: 8%;
+        bottom: 9vh;
+    }
+    .navigation img, .home-icon img {
+        height: 38px;
+    }
+    .next-btn {
+        padding: 11px 22px;
+        font-size: 15px;
+    }
+}
+
+/* Tablets (width <= 1024px) */
+@media (max-width: 1024px) {
+    .main-text {
+        font-size: 28px;
+        width: 55%;
+        right: 15%;
+        top: 12vh;
+    }
+    .contact {
+        font-size: 16px;
+        bottom: 8vh;
     }
     .navigation img, .home-icon img {
         height: 35px;
@@ -128,18 +149,41 @@ body {
     }
 }
 
-/* Mobile landscape and medium devices (max-width: 768px) */
-@media (max-width: 768px) {
+/* Landscape tablets and small laptops (width <= 900px) */
+@media (max-width: 900px) {
     .main-text {
-        font-size: 22px;
-        width: 70%;
-        right: 10%;
-        top: 15%;
+        font-size: 26px;
+        width: 65%;
+        right: 12%;
+        top: 13vh;
         line-height: 1.5;
     }
     .contact {
-        font-size: 16px;
-        bottom: 7%;
+        font-size: 15px;
+        bottom: 8vh;
+        left: 5%;
+    }
+    .navigation img, .home-icon img {
+        height: 32px;
+    }
+    .next-btn {
+        padding: 9px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Portrait tablets (width <= 768px) */
+@media (max-width: 768px) {
+    .main-text {
+        font-size: 24px;
+        width: 70%;
+        right: 10%;
+        top: 15vh;
+        line-height: 1.5;
+    }
+    .contact {
+        font-size: 14px;
+        bottom: 7vh;
         left: 6%;
     }
     .navigation img, .home-icon img {
@@ -147,12 +191,12 @@ body {
     }
     .next-btn {
         padding: 8px 16px;
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
-/* Small mobile phones (max-width: 480px) */
-@media (max-width: 480px) {
+/* Mobile devices (width <= 600px) */
+@media (max-width: 600px) {
     body {
         background-size: cover;
         overflow-y: auto;
@@ -161,10 +205,10 @@ body {
         position: relative;
         width: 90%;
         right: 0;
-        top: 20%;
+        top: 20vh;
         margin: 0 auto;
         text-align: left;
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.5;
     }
     .contact {
@@ -186,15 +230,35 @@ body {
         height: 28px;
     }
     .next-btn {
-        padding: 8px 14px;
-        font-size: 12px;
+        padding: 8px 16px;
+        font-size: 14px;
     }
     .home-icon {
-        top: 4%;
+        top: 4vh;
         left: 4%;
     }
     .home-icon img {
         height: 30px;
+    }
+}
+
+/* Small mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .main-text {
+        font-size: 18px;
+    }
+    .contact {
+        font-size: 14px;
+    }
+    .navigation img {
+        height: 26px;
+    }
+    .next-btn {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+    .home-icon img {
+        height: 28px;
     }
 }
 
@@ -204,98 +268,55 @@ body {
         font-size: 16px;
     }
     .contact {
-        font-size: 14px;
+        font-size: 12px;
     }
     .navigation img {
-        height: 25px;
+        height: 24px;
     }
     .next-btn {
         padding: 6px 12px;
         font-size: 11px;
     }
+    .home-icon img {
+        height: 25px;
+    }
 }
 
-/* iPad specific media query for 820x1180px layout */
+/* iPad specific media query for responsive layout */
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
     
-    body {
-        background-color: #f0f0f0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        overflow: auto;
-        background-image: none;
-        background-attachment: initial;
-    }
-    
-    .text-layer {
-        width: 820px;
-        height: 1180px;
-        background-image: url('assets/images/bg1.PNG');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        position: relative;
-        overflow: hidden;
-        margin: 20px auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    
     .main-text {
-        position: absolute;
-        top: 120px;
-        right: 20%;
-        width: 50%;
-        font-size: 24px;
-        line-height: 1.5;
-        color: #0f2926;
+        font-size: 28px;
+        width: 55%;
+        right: 15%;
+        top: 12vh;
     }
     
     .contact {
-        position: absolute;
-        bottom: 120px;
-        left: 40px;
         font-size: 16px;
-        font-family: 'Times New Roman', Times, serif;
-        color: #0f2926;
-        line-height: 1.5;
+        bottom: 8vh;
     }
     
     .navigation {
-        position: absolute;
-        bottom: 50px;
-        right: 40px;
-        display: flex;
-        gap: 15px;
-        align-items: center;
+        bottom: 6vh;
+        right: 6%;
     }
     
     .next-btn {
-        background-color: #67da6a;
-        color: black;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 6px;
+        padding: 10px 18px;
         font-size: 14px;
-        font-weight: 500;
-        text-decoration: none;
     }
     
     .home-icon {
-        position: absolute;
-        top: 30px;
-        left: 30px;
+        top: 4vh;
+        left: 4%;
     }
     
-    .home-icon img {
+    .home-icon img, .navigation img {
         height: 35px;
-        width: auto;
-        cursor: pointer;
     }
 }
 </style>

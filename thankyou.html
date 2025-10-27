@@ -24,6 +24,13 @@
       overflow: hidden;
       background-color: #0f2926;
     }
+    .back-button-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
 
     /* Center bottom content */
     .text-layer {
@@ -81,7 +88,7 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .next-btn:hover {
-        background-color: #1e7ba8;
+        /* background-color: #1e7ba8; */
         transform: translateY(-1px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
@@ -141,6 +148,9 @@
   </style>
 </head>
 <body>
+    <div class="back-button-wrapper" style="margin: 24px;">
+        <a href="index.html" class="next-btn"><strong>HOME</strong> </a>
+    </div>
   <div class="text-layer">
     <a href="4.html">
       <img src="assets/images/wright.PNG" alt="Center Image" class="center-image" style="margin-bottom: 79px;margin-left: 510px; opacity: 0; height: 100px;">

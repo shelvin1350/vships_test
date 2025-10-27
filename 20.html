@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Performances</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d3d3d;
+            color: white;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #0a2f2f;
+            padding: 20px 30px;
+            border-bottom: 1px solid white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .back-button-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+
+        .slide-number {
+            font-size: 12px;
+            color: black;
+            background-color: #d4e157;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .back-button {
+            background-color: #68da6a;
+            color: black;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .back-button:hover {
+            background-color: #5bc85d;
+        }
+
+        .header-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px 20px;
+            background-color: #0a2f2f;
+        }
+
+        .performance-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .performance-card {
+            background-color: #0a2f2f;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .performance-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background-color: #1a4a4a;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="%23e0e0e0"/><text x="100" y="100" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="%23666">Performance Image</text></svg>');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .performance-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .performance-title {
+            padding: 12px 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        .title-olive {
+            background-color: #b3c100;
+            color: white;
+        }
+
+        .title-pink {
+            background-color: #d81b60;
+            color: white;
+        }
+
+        .performance-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d4e157;
+            margin: 12px 0 8px 0;
+            text-align: center;
+        }
+        
+        .performance-name-red {
+            color: #d32d41;
+            margin: 12px 0 8px 0;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .performance-description {
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .performers-list {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #ccc;
+            text-align: center;
+        }
+
+        .performers-list .performer-title {
+            font-weight: bold;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .navigation {
+            position: absolute;
+            bottom: 4%;
+            right: 4%;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .next-btn {
+            background-color: #67da6a;
+            color: black;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .next-btn:hover {
+            background-color: #1e7ba8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .navigation img {
+            height: 40px;
+            width: auto;
+            cursor: pointer;
+        }
+
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+            /* Portrait Mode */
+            @media (orientation: portrait) {
+                .header {
+                    padding: 15px 20px;
+                    gap: 20px;
+                }
+
+                .header-title {
+                    font-size: 28px;
+                }
+
+                .back-button {
+                    padding: 8px 25px;
+                    font-size: 16px;
+                }
+
+                .content {
+                    padding: 25px 15px;
+                }
+
+                .performance-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+
+                .performance-title {
+                    font-size: 14px;
+                    padding: 10px 8px;
+                }
+
+                .performance-name {
+                    font-size: 20px;
+                    margin: 10px 0 6px 0;
+                }
+
+                .performance-image {
+                    width: 100%;
+                    aspect-ratio: 4/5;
+                    background-color: #1a4a4a;
+                    overflow: hidden;
+                }
+
+                .performance-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                
+                .performance-description {
+                    font-size: 13px;
+                }
+                
+                .performers-list {
+                    font-size: 12px;
+                }
+            }
+
+            /* Landscape Mode */
+            @media (orientation: landscape) {
+                .header {
+                    padding: 15px 20px;
+                    gap: 20px;
+                }
+
+                .header-title {
+                    font-size: 28px;
+                }
+
+                .back-button {
+                    padding: 8px 25px;
+                    font-size: 16px;
+                }
+
+                .content {
+                    padding: 25px 15px;
+                }
+
+                .performance-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20px;
+                }
+
+                .performance-title {
+                    font-size: 14px;
+                    padding: 10px 8px;
+                }
+
+                .performance-name {
+                    font-size: 20px;
+                    margin: 10px 0 6px 0;
+                }
+
+                .performance-description {
+                    font-size: 13px;
+                }
+                
+                .performers-list {
+                    font-size: 12px;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-button-wrapper">
+                <a href="19.html" class="next-btn">BACK</a>
+            </div>
+            <div class="header-title">Cultural Performances</div>
+        </div>
+
+        <div class="content">
+            <div class="performance-grid">
+                <!-- Performance 1 -->
+                <div class="performance-card">
+                    <div class="performance-image">
+                        Performance Image Placeholder
+                    </div>
+                    <!-- <div class="performance-title title-olive">
+                        Traditional Invocation
+                    </div> -->
+                    <h3 class="performance-name">Ganesh Vandana</h3>
+                    <p class="performance-description">
+                        A traditional invocation dance performed to seek blessings for wisdom, success and the auspicious start of the event
+                    </p>
+                    <div class="performers-list">
+                        <div class="performer-title">Performed by:</div>
+                        Jia Raut – Crew Co-Ordinator<br>
+                        Mohini Patil - Crew Co-Ordinator<br>
+                        Swapnali Sawant – Vessel Co-Ordinator<br>
+                        Niriksha Kotian - Crew Co-Ordinator<br>
+                        Renuka Chhura - Recruitment Administrator<br>
+                        Ankita Parab – Recruitment Officer<br>
+                        Shruti Rajpurohit - Crew Co-Ordinator
+                    </div>
+                </div>
+
+                <!-- Performance 2 -->
+                <div class="performance-card">
+                    <div class="performance-image">
+                        Performance Image Placeholder
+                    </div>
+                    <!-- <div class="performance-title title-pink">
+                        Classical Dance
+                    </div> -->
+                    <h3 class="performance-name-red">Bharatnatyam</h3>
+                    <p class="performance-description">
+                        It is a graceful and expressive classical dance form from Tamil Nadu that blends rhythm, tradition, and storytelling.
+                    </p>
+                    <div class="performers-list">
+                        <div class="performer-title">Performed by:</div>
+                        Komal Ingavale - Fleet Accountant
+                    </div>
+                </div>
+
+                <!-- Performance 3 -->
+                <div class="performance-card">
+                    <div class="performance-image">
+                        Performance Image Placeholder
+                    </div>
+                    <!-- <div class="performance-title title-olive">
+                        Folk Dance
+                    </div> -->
+                    <h3 class="performance-name">Rajasthani Folk</h3>
+                    <p class="performance-description">
+                        It showcases the vibrant spirit of Rajasthan through colorful costumes, lively music, and graceful movements that celebrate local traditions and community life.
+                    </p>
+                    <div class="performers-list">
+                        <div class="performer-title">Performed by:</div>
+                        Smita Baing - Fleet Accountant<br>
+                        Sania Sharma – Fleet Accountant
+                    </div>
+                </div>
+
+                <!-- Performance 4 -->
+                <div class="performance-card">
+                    <div class="performance-image">
+                        Performance Image Placeholder
+                    </div>
+                    <!-- <div class="performance-title title-pink">
+                        Festive Dance
+                    </div> -->
+                    <h3 class="performance-name-red">Bhangra / Garba</h3>
+                    <p class="performance-description">
+                        A vibrant folk dances from North and West India, celebrating joy, unity, and the spirit of festivity through energetic music and rhythmic movements
+                    </p>
+                    <div class="performers-list">
+                        <div class="performer-title">Performed by:</div>
+                        Group performance by Marine HR Team
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="21.html" class="next-btn">Next</a>
+            <img src="assets/images/V.ship_logo_green.svg" alt="Company Logo">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Dinner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d3d3d;
+            color: white;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #0a2f2f;
+            padding: 20px 30px;
+            border-bottom: 1px solid white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .back-button-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+
+        .slide-number {
+            font-size: 12px;
+            color: black;
+            background-color: #d4e157;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .back-button {
+            background-color: #68da6a;
+            color: black;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .back-button:hover {
+            background-color: #5bc85d;
+        }
+
+        .header-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px 20px;
+            background-color: #0a2f2f;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background-color: #0a2f2f;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background-color: white;
+            overflow: hidden;
+            border: 3px solid white;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-title {
+            padding: 12px 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        .title-olive {
+            background-color: #b3c100;
+            color: white;
+        }
+
+        .title-pink {
+            background-color: #d81b60;
+            color: white;
+        }
+
+        .member-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d4e157;
+            margin: 12px 0 8px 0;
+        }
+        .member-name-red{
+            color:#d32d41;
+            margin: 12px 0 8px 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .member-description {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+        .navigation {
+    position: absolute;
+    bottom: 04%;
+    right: 04%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.next-btn {
+    background-color: #67da6a;
+    color: black;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.next-btn:hover {
+    background-color: #1e7ba8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.navigation img {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+}
+
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+            /* Portrait Mode */
+            @media (orientation: portrait) {
+                .header {
+                    padding: 15px 20px;
+                    gap: 20px;
+                }
+
+                .header-title {
+                    font-size: 28px;
+                }
+
+                .back-button {
+                    padding: 8px 25px;
+                    font-size: 16px;
+                }
+
+                .content {
+                    padding: 25px 15px;
+                }
+
+                .team-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+
+                .member-title {
+                    font-size: 14px;
+                    padding: 10px 8px;
+                }
+
+                .member-name {
+                    font-size: 20px;
+                    margin: 10px 0 6px 0;
+                }
+
+                .member-photo {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background-color: white;
+            overflow: hidden;
+            border: 3px solid white;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+                .member-description {
+                    font-size: 13px;
+                }
+            }
+
+            /* Landscape Mode */
+            @media (orientation: landscape) {
+                .header {
+                    padding: 15px 20px;
+                    gap: 20px;
+                }
+
+                .header-title {
+                    font-size: 28px;
+                }
+
+                .back-button {
+                    padding: 8px 25px;
+                    font-size: 16px;
+                }
+
+                .content {
+                    padding: 25px 15px;
+                }
+
+                .team-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20px;
+                }
+
+                .member-title {
+                    font-size: 14px;
+                    padding: 10px 8px;
+                }
+
+                .member-name {
+                    font-size: 20px;
+                    margin: 10px 0 6px 0;
+                }
+
+                .member-description {
+                    font-size: 13px;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-button-wrapper">
+                <a href="16.html" class="next-btn">BACK</a>
+            </div>
+            <div class="header-title">Marine HR Floor Walk</div>
+        </div>
+
+        <div class="content">
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/images/image16.png" alt="Ajay Yadav">
+                    </div>
+                    <div class="member-title title-olive">
+                        Senior Recruitment<br>Manager – India
+
+                    </div>
+                    <h3 class="member-name">Ajay Yadav</h3>
+                    <p class="member-description">
+                        An engineer by profession with an MBA in HR. Responsible for all recruitment and SFC activities across the Indian Subcontinent covering both the Cargo and Offshore fleets. He has been with V. for over 29 years with 11 years at Sea and 18 years ashore.
+                    </p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/images/image17.png" alt="Rahul Negi">
+                    </div>
+                    <div class="member-title title-pink">
+                        Global Head of<br>Training Operations 
+
+                    </div>
+                    <h3 class="member-name-red">Rahul Negi</h3>
+                    <p class="member-description">
+                        In charge for V. training operations including 5 training centres in Manila, Mumbai, Shanghai, Odessa and Gdynia. Maritime professional experience of 27 years including 15 years ashore, working with V. since 2022.
+                    </p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/images/image18.png" alt="Sujit Vaidya">
+                    </div>
+                    <div class="member-title title-olive">
+                        Crew Assessment<br>Director
+                    </div>
+                    <h3 class="member-name">Sujit Vaidya</h3>
+                    <p class="member-description">
+                        Master Mariner with experience on various Tankers. Background in Ship Management. Has been working with V. for 15 years.
+                    </p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/images/image19.png" alt="Hanoz Billimoria">
+                    </div>
+                    <div class="member-title title-pink">
+                        Regional Training<br>Manager 
+                    </div>
+                    <h3 class="member-name-red">Hanoz Billimoria</h3>
+                    <p class="member-description">
+                        A Master Mariner, sailed for totally 23 years, Responsible for V. Academy Training Centre (Mumbai) operations. Has been in the organization since April 2025. Have overall 30 years experience in the Maritime Industry, with last 8 years working ashore.
+                    </p>
+                </div>
+
+                <!-- Team Member 5
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/images/image8.png" alt="Chetna Vats">
+                    </div>
+                    <div class="member-title title-olive">
+                        Regional HR Manager
+                    </div>
+                    <h3 class="member-name">Chetna Vats</h3>
+                    <p class="member-description">
+                        Leads India HR team. Have been working with V. for over 7 years and having overall 21 years of work experience.
+                    </p>
+                </div> -->
+            </div>
+        </div>
+
+        
+        <div class="navigation">
+        <a href="18.html" class="next-btn">Next</a>
+        <img src="assets/images/V.ship_logo_green.svg" alt="Company Logo">
+    </div>
+    </div>
+</body>
+</html>

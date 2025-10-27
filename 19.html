@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Dinner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d3d3d;
+            color: white;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #0a2f2f;
+            padding: 20px 30px;
+            border-bottom: 1px solid white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .back-button-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+
+        .slide-number {
+            font-size: 12px;
+            color: black;
+            background-color: #d4e157;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .back-button {
+            background-color: #68da6a;
+            color: black;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .back-button:hover {
+            background-color: #5bc85d;
+        }
+
+        .header-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px 20px;
+            background-color: #0a2f2f;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background-color: #0a2f2f;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background-color: white;
+            overflow: hidden;
+            border: 3px solid white;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-title {
+            padding: 12px 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        .title-olive {
+            background-color: #b3c100;
+            color: white;
+        }
+
+        .title-pink {
+            background-color: #d81b60;
+            color: white;
+        }
+
+        .member-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d4e157;
+            margin: 12px 0 8px 0;
+        }
+        .member-name-red{
+            color:#d32d41;
+            margin: 12px 0 8px 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .member-description {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .pod-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .pod-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .pod-1 {
+            color: #b3c100;
+        }
+
+        .pod-2 {
+            color: #d81b60;
+        }
+
+        .pod-3 {
+            color: #b3c100;
+        }
+
+        .pod-4 {
+            color: #d81b60;
+        }
+
+        .pod-description {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+        .navigation {
+    position: absolute;
+    bottom: 04%;
+    right: 04%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.next-btn {
+    background-color: #67da6a;
+    color: black;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.next-btn:hover {
+    background-color: #1e7ba8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.navigation img {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+}
+
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+            /* Portrait Mode */
+            @media (orientation: portrait) {
+                .header {
+                    padding: 15px 20px;
+                    gap: 20px;
+                }
+
+                .header-title {
+                    font-size: 28px;
+                }
+
+                .back-button {
+                    padding: 8px 25px;
+                    font-size: 16px;
+                }
+
+                .content {
+                    padding: 25px 15px;
+                }
+
+                .team-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                }
+
+                .member-title {
+                    font-size: 14px;
+                    padding: 10px 8px;
+                }
+
+                .member-name {
+                    font-size: 20px;
+                    margin: 10px 0 6px 0;
+                }
+
+                .member-photo {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background-color: white;
+            overflow: hidden;
+            border: 3px solid white;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+                .member-description {
+                    font-size: 13px;
+                }
+            }
+
+            /* Landscape Mode */
+            @media (orientation: landscape) {
+                .header {
+                    padding: 15px 20px;
+                    gap: 20px;
+                }
+
+                .header-title {
+                    font-size: 28px;
+                }
+
+                .back-button {
+                    padding: 8px 25px;
+                    font-size: 16px;
+                }
+
+                .content {
+                    padding: 25px 15px;
+                }
+
+                .team-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20px;
+                }
+
+                .member-title {
+                    font-size: 14px;
+                    padding: 10px 8px;
+                }
+
+                .member-name {
+                    font-size: 20px;
+                    margin: 10px 0 6px 0;
+                }
+
+                .member-description {
+                    font-size: 13px;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-button-wrapper">
+                <a href="18.html" class="next-btn">BACK</a>
+            </div>
+            <div class="header-title">Marine HR Floor Walk</div>
+        </div>
+
+        <div class="content">
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="pod-header">
+                        <div class="pod-number pod-1">POD 1</div>
+                        <div class="pod-description">Paper to Digital</div>
+                    </div>
+                    <div class="member-photo">
+                        <img src="assets/images/image20.png" alt="Vishwajit Rai">
+                    </div>
+                    <div class="member-title title-olive">
+                        Head of Operations
+
+                    </div>
+                    <h3 class="member-name">Vishwajit Rai</h3>
+                    <p class="member-description">
+                        Manages Operations Delivery for Vessel Accounting team in Mumbai and Chennai. Overall, 28 years of work experience, including 2 years with V.
+                    </p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="pod-header">
+                        <div class="pod-number pod-2">POD 2</div>
+                        <div class="pod-description">Digital to Digital Process</div>
+                    </div>
+                    <div class="member-photo">
+                        <img src="assets/images/image21.png" alt="Imran Darvesh">
+                    </div>
+                    <div class="member-title title-pink">
+                        Global Operations<br>Manager 
+
+                    </div>
+                    <h3 class="member-name-red">Imran Darvesh</h3>
+                    <p class="member-description">
+                        Manages Operations Delivery for Entity Accounting team in Mumbai. Overall, 28 years of work experience, including 6 years with V.
+                    </p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="pod-header">
+                        <div class="pod-number pod-3">POD 3</div>
+                        <div class="pod-description">Digital Process to Assurance</div>
+                    </div>
+                    <div class="member-photo">
+                        <img src="assets/images/image22.jpg" alt="Rehman Shaikh">
+                    </div>
+                    <div class="member-title title-olive">
+                        Regional Lead<br>Controllership
+                    </div>
+                    <h3 class="member-name">Rehman Shaikh</h3>
+                    <p class="member-description">
+                        Leads Controllership team for Greece, Denmark and Germany. Overall, 15 years of work experience, including 7 years with V.
+                    </p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="pod-header">
+                        <div class="pod-number pod-4">POD 4</div>
+                        <div class="pod-description">Assurance to Scale</div>
+                    </div>
+                    <div class="member-photo">
+                        <img src="assets/images/image23.png" alt="Savita Gowda">
+                    </div>
+                    <div class="member-title title-pink">
+                        Senior Team<br>Leader 
+                    </div>
+                    <h3 class="member-name-red">Savita Gowda</h3>
+                    <p class="member-description">
+                        Leads Procure to Pay team in Mumbai with 14 years of experience with V.
+                    </p>
+                </div>
+
+                <!-- Team Member 5
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="assets/images/image8.png" alt="Chetna Vats">
+                    </div>
+                    <div class="member-title title-olive">
+                        Regional HR Manager
+                    </div>
+                    <h3 class="member-name">Chetna Vats</h3>
+                    <p class="member-description">
+                        Leads India HR team. Have been working with V. for over 7 years and having overall 21 years of work experience.
+                    </p>
+                </div> -->
+            </div>
+        </div>
+
+        
+        <div class="navigation">
+        <a href="20.html" class="next-btn">Next</a>
+        <img src="assets/images/V.ship_logo_green.svg" alt="Company Logo">
+    </div>
+    </div>
+</body>
+</html>

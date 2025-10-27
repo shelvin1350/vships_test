@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank you</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: "Times New Roman", serif;
+      color: #ffffff;
+    }
+
+    /* Background image */
+    body {
+      background-image: url('assets/images/1111.PNG'); /* Replace with your image */
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+      background-color: #0f2926;
+    }
+
+    /* Center bottom content */
+    .text-layer {
+      position: absolute;
+      bottom: 5%; /* distance from bottom */
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #ffffff;
+      width: 90%;
+    }
+
+    .text-layer h1 {
+      font-size: clamp(30px, 6vw, 70px);
+      margin: 0;
+      font-weight: bold;
+      font-family: "Amina Light", serif;
+    }
+
+    .text-layer h2 {
+      font-style: italic;
+      font-size: clamp(16px, 3vw, 40px);
+      margin-top: 10px;
+      font-weight: normal;
+      font-family: "Amina Light", serif;
+    }
+
+    /* Footer if needed */
+    .text-layer .footer {
+      font-size: clamp(12px, 2vw, 18px);
+      font-family: 'Times New Roman', serif;
+      margin-top: 10px;
+    }
+
+    /* Navigation */
+    .navigation {
+        position: absolute;
+        bottom: 04%;
+        right: 04%;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    .next-btn {
+        background-color: #67da6a;
+        color: black;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .next-btn:hover {
+        background-color: #1e7ba8;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 1024px) {
+        .text-layer img.center-image {
+            max-width: 150px;
+            margin-left: 0 !important; /* override fixed inline margin */
+            margin-bottom: 50px !important;
+        }
+        .next-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .text-layer h1 {
+            font-size: clamp(25px, 6vw, 50px);
+        }
+        .text-layer h2 {
+            font-size: clamp(14px, 3vw, 30px);
+        }
+        .text-layer img.center-image {
+            max-width: 120px;
+            margin-bottom: 40px !important;
+        }
+        .next-btn {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .text-layer {
+            bottom: 3%;
+        }
+        .text-layer h1 {
+            font-size: clamp(20px, 5vw, 40px);
+        }
+        .text-layer h2 {
+            font-size: clamp(12px, 3vw, 25px);
+        }
+        .text-layer img.center-image {
+            max-width: 100px;
+            margin-bottom: 30px !important;
+        }
+        .next-btn {
+            padding: 8px 14px;
+            font-size: 12px;
+        }
+    }
+    .text-layer img.center-image {
+    opacity: 0.7; /* 0 = fully transparent, 1 = fully opaque */
+}
+  </style>
+</head>
+<body>
+  <div class="text-layer">
+    <a href="4.html">
+      <img src="assets/images/wright.PNG" alt="Center Image" class="center-image" style="margin-bottom: 79px;margin-left: 510px; opacity: 0; height: 100px;">
+    </a>
+    <h1>Thank you</h1>
+    <!-- <h2><i>House of Marine HR, Global Shared Service & Training</i></h2> -->
+  </div>
+  <!-- <div class="navigation">
+        <div style="color: #ffffff; font-size: 14px; margin-bottom: 10px; text-align: right;">OCT 2025</div>
+        <a href="1.html" class="next-btn">Next</a>
+    </div> -->
+</body>
+</html>

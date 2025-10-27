@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting Client Pallonji</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d3d3d;
+      color: white;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background-color: #0a2f2f;
+      padding: 20px 30px;
+      border-bottom: 1px solid white;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .back-button-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
+    .slide-number {
+      font-size: 12px;
+      color: black;
+      background-color: #d4e157;
+      padding: 3px 10px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+
+    .back-button {
+      background-color: #68da6a;
+      color: black;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .back-button:hover {
+      background-color: #5bc85d;
+    }
+
+    .header-title {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .content {
+      display: flex;
+      flex: 1;
+    }
+
+    .left-section {
+      flex: 0 0 250px;
+      background-color: #0a2f2f;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .person-photo {
+      width: 160px;
+      height: 180px;
+      background-color: white;
+      overflow: hidden;
+    }
+
+    .person-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .person-label {
+      color: black;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      width: 100%;
+    }
+
+    .middle-section {
+      flex: 1;
+      padding: 40px 60px;
+      background-color: #0a2f2f;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .person-name {
+      color: #b3c100;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .person-details {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .person-details p {
+      margin-bottom: 20px;
+    }
+
+    .right-section {
+      flex: 0 0 300px;
+      background-color: #0a2f2f;
+      padding: 40px 30px;
+      border-left: 2px solid #24643f;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .address-box {
+      background-color: #b3c100;
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      color: black;
+    }
+
+    .address-box p {
+      margin-bottom: 10px;
+    }
+
+    .navigation {
+      position: absolute;
+      bottom: 4%;
+      right: 4%;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .next-btn {
+      background-color: #67da6a;
+      color: black;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .next-btn:hover {
+      background-color: #1e7ba8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .navigation img {
+      height: 40px;
+      width: auto;
+      cursor: pointer;
+    }
+
+    /* ===========================
+       ✅ Responsive for 768–1024px
+       =========================== */
+    @media (min-width: 768px) and (max-width: 1024px) {
+
+      .header {
+        padding: 15px 20px;
+        gap: 20px;
+      }
+
+      .header-title {
+        font-size: 28px;
+      }
+
+      .back-button {
+        padding: 8px 25px;
+        font-size: 16px;
+      }
+
+      .content {
+        flex-direction: column;
+      }
+
+      .left-section {
+        flex: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 40px;
+        border-bottom: 1px solid white;
+        border-right: none;
+        gap: 30px;
+      }
+
+      .person-photo {
+        width: 140px;
+        height: 160px;
+      }
+
+      .person-label {
+        width: 180px;
+        height: auto;
+      }
+
+      .middle-section {
+        padding: 30px 40px;
+      }
+
+      .person-name {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .person-details {
+        font-size: 16px;
+      }
+
+      .right-section {
+        flex: none;
+        padding: 30px;
+        border-left: none;
+        border-top: 1px solid white;
+        align-items: center;
+      }
+
+      .address-box {
+        font-size: 18px;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .navigation {
+        bottom: 3%;
+        right: 3%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="back-button-wrapper">
+        <a href="9.html" class="next-btn">BACK</a>
+      </div>
+      <div class="header-title">Meeting Client Pallonji</div>
+    </div>
+
+    <div class="content">
+      <div class="left-section">
+        <div class="person-photo">
+          <img src="assets/images/Picture9.jpg" alt="Person Photo">
+        </div>
+        <img src="assets/images/Picture10.png" alt="m Pallonji Logo" class="person-label">
+      </div>
+
+      <div class="middle-section">
+        <div>
+          <h2 class="person-name">M Pallonji Group</h2>
+          <div class="person-details">
+            <p>M Pallonji Group of Companies was established in 1927, primarily as a paint marketing company. Today, the companies of the M Pallonji Group have several entities engaged in diverse activities. These include painting, dredging, stevedoring, logistics solutions, shipping, finance, investments, life insurance, automobile dealerships and manufacture of specialty coatings.</p>
+            <p>The company is owned by two brothers, Mehli and Pheroze (our main contact) Mistry, of Parsi origins.</p>
+            <p>The two brothers are cousin of former Tata's Chairman Cyrus Mistry, younger brother of Shapoor, heir of the Shapoorji Pallonji Group.</p>
+            <p>M Pallonji owns 10 ships as follows:<br>
+              - 4 PSVs Indian Flag in domestic trade<br>
+              - 3 tankers (1 managed by V Ships India, 2 by Fleet)<br>
+              - 3 bulk carriers (1 managed by V Ships India, 2 by BSM)
+            </p>
+            <p>M Pallonji has recently acquired a Post Panamax bulk carrier that is expected to be awarded to V Ships India with takeover at the end of November.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <div class="address-box">Address</div>
+        <p>44 Cawasji Patel Street, Fort, Mumbai 400001</p>
+        <p>Phone +91 22 6610000</p>
+        <p>Accompanied by: Mario Moretti, Venkatesh Gomtatam</p>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <a href="11.html" class="next-btn">Next</a>
+      <img src="assets/images/V.ship_logo_green.svg" alt="Company Logo">
+    </div>
+  </div>
+</body>
+</html>

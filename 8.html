@@ -99,7 +99,7 @@
 
         .person-label {
             background-color: #b3c100;
-            color: color;
+            color: black; /* Fixed typo: 'color' to 'black' */
             padding: 15px 20px;
             text-align: center;
             font-weight: bold;
@@ -142,7 +142,8 @@
             flex: 0 0 300px;
             background-color: #0a2f2f;
             padding: 40px 30px;
-            border-left: 2px solid #24643f;            display: flex;
+            border-left: 2px solid #24643f;
+            display: flex;
             flex-direction: column;
             gap: 20px;
         }
@@ -195,41 +196,43 @@
         }
 
         .navigation {
-    position: absolute;
-    bottom: 04%;
-    right: 04%;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-.next-btn {
-    background-color: #67da6a;
-    color: black;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+            position: absolute;
+            bottom: 4%;
+            right: 4%;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
 
-.next-btn:hover {
-    background-color: #1e7ba8;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-.navigation img {
-    height: 40px;
-    width: auto;
-    cursor: pointer;
-}
+        .next-btn {
+            background-color: #67da6a;
+            color: black;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .next-btn:hover {
+            background-color: #1e7ba8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .navigation img {
+            height: 40px;
+            width: auto;
+            cursor: pointer;
+        }
 
         @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-            /* Portrait Mode */
-            @media (orientation: portrait) {
+            /* Portrait and Landscape Mode */
+            @media (orientation: portrait), (orientation: landscape) {
                 .header {
                     padding: 15px 20px;
                     gap: 20px;
@@ -245,16 +248,16 @@
                 }
 
                 .content {
-                    flex-direction: column;
+                    flex-direction: row; /* Changed to row to match landscape */
                 }
 
                 .left-section {
-                    flex: none;
-                    flex-direction: row;
+                    flex: 0 0 250px;
+                    flex-direction: column;
                     padding: 25px 20px;
                     border-right: none;
-                    border-bottom: 1px solid white;
-                    gap: 30px;
+                    border-bottom: none; /* Removed bottom border to match landscape */
+                    gap: 20px;
                 }
 
                 .person-photo {
@@ -263,10 +266,8 @@
                 }
 
                 .person-label {
-                    flex: 1;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    flex: none; /* Removed flex properties to match landscape */
+                    padding: 10px 18px; /* Adjusted padding to match landscape */
                 }
 
                 .middle-section {
@@ -288,97 +289,9 @@
                 }
 
                 .right-section {
-                    flex: none;
+                    flex: 0 0 300px;
                     padding: 30px;
-                    border-left: none;
-                    border-top: 1px solid white;
-                    flex-direction: column;
-                }
-
-                .manager-photo {
-                    width: 140px;
-                    height: 160px;
-                }
-
-                .manager-title {
-                    font-size: 15px;
-                    padding: 10px 18px;
-                }
-
-                .manager-name {
-                    font-size: 20px;
-                    margin-bottom: 12px;
-                }
-
-                .manager-details {
-                    font-size: 15px;
-                }
-            }
-
-            /* Landscape Mode */
-            @media (orientation: landscape) {
-                .header {
-                    padding: 15px 20px;
-                    gap: 20px;
-                }
-
-                .header-title {
-                    font-size: 26px;
-                }
-
-                .back-button {
-                    padding: 8px 25px;
-                    font-size: 16px;
-                }
-
-                .content {
-                    flex-direction: column;
-                }
-
-                .left-section {
-                    flex: none;
-                    flex-direction: row;
-                    padding: 25px 20px;
-                    border-right: none;
-                    border-bottom: 1px solid white;
-                    gap: 30px;
-                }
-
-                .person-photo {
-                    width: 140px;
-                    height: 160px;
-                }
-
-                .person-label {
-                    flex: 1;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                .middle-section {
-                    padding: 30px 40px;
-                }
-
-                .person-name {
-                    font-size: 24px;
-                    margin-bottom: 20px;
-                }
-
-                .person-details {
-                    font-size: 16px;
-                }
-
-                .meeting-location {
-                    font-size: 16px;
-                    margin-top: 30px;
-                }
-
-                .right-section {
-                    flex: none;
-                    padding: 30px;
-                    border-left: none;
-                    border-top: 1px solid white;
+                    border-left: 2px solid #24643f; /* Restored left border to match landscape */
                     flex-direction: column;
                 }
 
@@ -454,11 +367,10 @@
             </div>
         </div>
 
-       
         <div class="navigation">
-        <a href="9.html" class="next-btn">Next</a>
-        <img src="assets/images/V.ship_logo_green.svg" alt="Company Logo">
-    </div>
+            <a href="9.html" class="next-btn">Next</a>
+            <img src="assets/images/V.ship_logo_green.svg" alt="Company Logo">
+        </div>
     </div>
 </body>
 </html>

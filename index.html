@@ -40,6 +40,7 @@
       font-size: clamp(30px, 6vw, 70px);
       margin: 0;
       font-weight: bold;
+      font-family: "Amina Light", serif;
     }
 
     .text-layer h2 {
@@ -47,6 +48,7 @@
       font-size: clamp(16px, 3vw, 40px);
       margin-top: 10px;
       font-weight: normal;
+      font-family: "Amina Light", serif;
     }
 
     /* Footer if needed */
@@ -63,11 +65,25 @@
         left: 04%;
         display: flex;
         gap: 15px;
+        align-items: center;
     }
-    .navigation img {
-        height: 40px;
-        width: auto;
+    .next-btn {
+        background-color: #2596be;
+        color: black;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
         cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .next-btn:hover {
+        background-color: #1e7ba8;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
     /* Responsive tweaks */
@@ -76,6 +92,10 @@
             max-width: 150px;
             margin-left: 0 !important; /* override fixed inline margin */
             margin-bottom: 50px !important;
+        }
+        .next-btn {
+            padding: 10px 20px;
+            font-size: 14px;
         }
     }
 
@@ -89,6 +109,10 @@
         .text-layer img.center-image {
             max-width: 120px;
             margin-bottom: 40px !important;
+        }
+        .next-btn {
+            padding: 8px 16px;
+            font-size: 14px;
         }
     }
 
@@ -106,6 +130,10 @@
             max-width: 100px;
             margin-bottom: 30px !important;
         }
+        .next-btn {
+            padding: 8px 14px;
+            font-size: 12px;
+        }
     }
     .text-layer img.center-image {
     opacity: 0.7; /* 0 = fully transparent, 1 = fully opaque */
@@ -121,9 +149,7 @@
     <h2><i>House of Marine HR, Global Shared Service & Training</i></h2>
   </div>
   <div class="navigation">
-        <a href="1.html">
-            <img src="assets/images/wright.PNG" alt="Next Day">
-        </a>
+        <a href="1.html" class="next-btn">Next</a>
     </div>
 </body>
 </html>

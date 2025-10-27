@@ -15,7 +15,7 @@ html, body {
     color: #0f2926;
 }
 body {
-    background-image: url('assets/images/bg1.PNG');
+    background-image: url('assets/images/111.PNG');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; 
@@ -38,13 +38,13 @@ body {
     box-sizing: border-box;
 }
 .main-text {
-    position: absolute;
-    top: 10%;
-    right: 25%;
-    width: 40%;
-    font-size: 35px;
-    line-height: 1.6;
-    color: #0f2926;
+	position: absolute;
+	top: 10%;
+	right: 8%;
+	width: 60%;
+	font-size: 35px;
+	line-height: 1.6;
+	color: #0f2926;
 }
 .main-text strong {
     font-weight: bold;
@@ -64,9 +64,28 @@ body {
 .navigation {
     position: absolute;
     bottom: 04%;
-    left: 04%;
+    right: 04%;
     display: flex;
     gap: 15px;
+    align-items: center;
+}
+.next-btn {
+    background-color: #67da6a;
+    color: black;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.next-btn:hover {
+    background-color: #1e7ba8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 .navigation img {
     height: 40px;
@@ -103,6 +122,10 @@ body {
     .navigation img, .home-icon img {
         height: 35px;
     }
+    .next-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
 }
 
 /* Mobile landscape and medium devices (max-width: 768px) */
@@ -121,6 +144,10 @@ body {
     }
     .navigation img, .home-icon img {
         height: 30px;
+    }
+    .next-btn {
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
 
@@ -158,6 +185,10 @@ body {
     .navigation img {
         height: 28px;
     }
+    .next-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
     .home-icon {
         top: 4%;
         left: 4%;
@@ -178,6 +209,94 @@ body {
     .navigation img {
         height: 25px;
     }
+    .next-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+}
+
+/* iPad specific media query for 820x1180px layout */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    
+    body {
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: auto;
+        background-image: none;
+        background-attachment: initial;
+    }
+    
+    .text-layer {
+        width: 820px;
+        height: 1180px;
+        background-image: url('assets/images/bg1.PNG');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .main-text {
+        position: absolute;
+        top: 120px;
+        right: 20%;
+        width: 50%;
+        font-size: 24px;
+        line-height: 1.5;
+        color: #0f2926;
+    }
+    
+    .contact {
+        position: absolute;
+        bottom: 120px;
+        left: 40px;
+        font-size: 16px;
+        font-family: 'Times New Roman', Times, serif;
+        color: #0f2926;
+        line-height: 1.5;
+    }
+    
+    .navigation {
+        position: absolute;
+        bottom: 50px;
+        right: 40px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .next-btn {
+        background-color: #67da6a;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    
+    .home-icon {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    
+    .home-icon img {
+        height: 35px;
+        width: auto;
+        cursor: pointer;
+    }
 }
 </style>
 </head>
@@ -193,25 +312,24 @@ body {
         <p>
             Hi René,<br>
             I’m <strong>Nemo</strong> your guide for your Mumbai visit.<br><br>
-            “Click the next button for an overview of the day's agenda, on clicking the human icon adjacent to the event you will get details of the event, the bio pic. &amp; additional information.<br>
+            "Click the next button for an overview of the day's agenda, on clicking the human icon <img src="assets/images/picture1.svg" alt="Picture" style="height: 50px; vertical-align: middle;"> adjacent to the event you will get details of the event, the bio pic. &amp; additional information.<br>
             Hope you have an enjoyable visit.”
         </p>
     </div>
     
     <div class="contact">
         <p>
-            <strong><b>Contact :</b></strong><br>
-            <b>Sriram Gopalakrishnan –</b><br>
-            <b>Ph +91 9740100887</b><br>
-            <b>Director Global Shared Services &amp;<br>
-            Mumbai Site Lead</b>
+            <strong><b><span style="font-size: 1.2em;">Contact :</span></b></strong><br>
+            <b><span style="font-size: 1.2em;">Sriram Gopalakrishnan –</span></b><br>
+            <b><span style="font-size: 1.2em;">Ph +91 9740100887</span></b><br>
+            <b><span style="font-size: 0.85em;">Director Global Shared Services &amp;<br>
+            Mumbai Site Lead</span></b>
         </p>
     </div>
  
     <div class="navigation">
-        <a href="3.html">
-            <img src="assets/images/right.PNG" alt="Next Day">
-        </a>
+        <a href="3.html" class="next-btn">Next</a>
+        <img src="assets/images/V.ship_logo_black.svg" alt="Company Logo">
     </div>
 </div>
 </body>

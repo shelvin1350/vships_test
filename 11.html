@@ -27,59 +27,45 @@
 
     /* ================= HEADER ================= */
     .header {
+      background-color: #0a2f2f;
+      padding: 20px 30px;
+      border-bottom: 1px solid white;
       display: flex;
-      align-items: stretch;
-      background-color: #0A2F2F;
-      height: 100px;
+      align-items: center;
+      gap: 30px;
     }
 
     .back-button-wrapper {
       display: flex;
       flex-direction: column;
-      width: 180px;
-      flex-shrink: 0;
-    }
-
-    .slide-label {
-      background-color: #D4E157;
-      color: #000;
-      font-size: 18px;
-      font-weight: 600;
-      padding: 8px 25px;
-      display: flex;
-      align-items: center;
-      flex: 1;
+      align-items: flex-start;
+      gap: 5px;
     }
 
     .back-btn {
-      background-color: #67DA6A;
-      color: #000;
+      background-color: #67da6a;
+      color: black;
+      padding: 12px 24px;
       border: none;
-      padding: 12px 25px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 18px;
-      font-weight: 700;
+      font-size: 16px;
+      font-weight: 500;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      transition: background-color 0.3s ease;
-      flex: 1;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .back-btn:hover {
-      background-color: #5BC85E;
+      background-color: #58c05b;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
     .heading-section {
       font-size: 36px;
-      font-weight: 400;
-      color: white;
-      padding: 0 40px;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-      letter-spacing: 0.5px;
+      font-weight: bold;
     }
 
     /* ================= CONTENT ================= */
@@ -237,11 +223,17 @@
 
     @media screen and (max-width: 1200px) {
       .header {
-        height: 85px;
+        padding: 15px 20px;
+        gap: 20px;
       }
 
       .heading-section {
-        font-size: 24px;
+        font-size: 28px;
+      }
+
+      .back-btn {
+        padding: 8px 25px;
+        font-size: 16px;
       }
 
       .section {
@@ -267,7 +259,6 @@
   <div class="container">
     <div class="header">
       <div class="back-button-wrapper">
-        <div class="slide-label">Slide 5</div>
         <a href="10.html" class="back-btn">BACK</a>
       </div>
       <div class="heading-section">Sideline meetings at NESCO (Tentative)</div>

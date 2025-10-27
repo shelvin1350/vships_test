@@ -90,6 +90,112 @@ body {
     .contact strong {
       font-weight: bold;
     }
+    .home-icon {
+        position: absolute;
+        top: 3%;
+        left: 3%;
+    }
+    .home-icon img {
+        height: 40px;
+        width: auto;
+        cursor: pointer;
+    }
+    
+        .navigation {
+        position: absolute;
+        bottom: 04%;
+        right: 04%;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    .back-navigation {
+        position: absolute;
+        bottom: 04%;
+        left: 04%;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    .next-btn, .back-btn {
+        background-color: #67da6a;
+        color: black;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .next-btn:hover, .back-btn:hover {
+        background-color: #5bc85e;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .navigation img {
+        height: 40px;
+        width: auto;
+        cursor: pointer;
+    }
+    
+    .sideline-meetings {
+        position: absolute;
+        bottom: 36%;
+        right: 04%;
+        background-color: rgba(255, 255, 255, 0.95);
+        border: 2px solid #0f2926;
+        border-radius: 8px;
+        padding: 15px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #0f2926;
+        width: 250px;
+        max-width: 90vw;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .sideline-meetings h3 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0f2926;
+    }
+    
+    .sideline-meetings .subtitle {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+    
+    .meeting-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        gap: 8px;
+    }
+    
+    .meeting-item .client-name {
+        font-weight: bold;
+        flex: 1;
+    }
+    
+    .meeting-item .slide-info {
+        background-color: #fff67b;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .meeting-item .icon {
+        color: #67da6a;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
     /* ------------------- RESPONSIVE STYLES ------------------- */
 
@@ -177,7 +283,7 @@ body {
         font-size: 14px;
       }
       .sideline-meetings {
-        bottom: 36%;
+        bottom: 25%;
         right: 6%;
         width: 230px;
         padding: 13px;
@@ -312,6 +418,12 @@ body {
         max-width: none;
       }
     }
+    @media (min-height: 810px) and (max-height: 950px) {
+        .sideline-meetings {
+            bottom: 30%;
+        }
+    }
+
 
     /* Landscape phones (height <= 500px and landscape orientation) */
     @media (max-height: 500px) and (orientation: landscape) {
@@ -350,112 +462,7 @@ body {
         font-size: 12px;
       }
     }
-    .home-icon {
-        position: absolute;
-        top: 3%;
-        left: 3%;
-    }
-    .home-icon img {
-        height: 40px;
-        width: auto;
-        cursor: pointer;
-    }
     
-        .navigation {
-        position: absolute;
-        bottom: 04%;
-        right: 04%;
-        display: flex;
-        gap: 15px;
-        align-items: center;
-    }
-    .back-navigation {
-        position: absolute;
-        bottom: 04%;
-        left: 04%;
-        display: flex;
-        gap: 15px;
-        align-items: center;
-    }
-    .next-btn, .back-btn {
-        background-color: #67da6a;
-        color: black;
-        padding: 12px 24px;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 500;
-        text-decoration: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .next-btn:hover, .back-btn:hover {
-        background-color: #5bc85e;
-        transform: translateY(-1px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-    .navigation img {
-        height: 40px;
-        width: auto;
-        cursor: pointer;
-    }
-    
-    .sideline-meetings {
-        position: absolute;
-        bottom: 36%;
-        right: 04%;
-        background-color: rgba(255, 255, 255, 0.95);
-        border: 2px solid #0f2926;
-        border-radius: 8px;
-        padding: 15px;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 16px;
-        line-height: 1.4;
-        color: #0f2926;
-        width: 250px;
-        max-width: 90vw;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .sideline-meetings h3 {
-        margin: 0 0 8px 0;
-        font-size: 18px;
-        font-weight: bold;
-        color: #0f2926;
-    }
-    
-    .sideline-meetings .subtitle {
-        font-size: 14px;
-        color: #666;
-        margin-bottom: 10px;
-    }
-    
-    .meeting-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-        gap: 8px;
-    }
-    
-    .meeting-item .client-name {
-        font-weight: bold;
-        flex: 1;
-    }
-    
-    .meeting-item .slide-info {
-        background-color: #fff67b;
-        padding: 2px 6px;
-        border-radius: 3px;
-        font-size: 14px;
-        font-weight: bold;
-    }
-    
-    .meeting-item .icon {
-        color: #67da6a;
-        font-size: 16px;
-        font-weight: bold;
-    }
   </style>
 </head>
 <body>

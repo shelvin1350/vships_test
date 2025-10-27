@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick up from Airport</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Amina Light;
+            background-color: #0d3d3d;
+            color: white;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #052e2b;
+            padding: 20px 30px;
+            border-bottom: 1px solid white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .back-button {
+            background-color: #68da6a;
+            color: black;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            text-decoration: underline;
+        }
+
+        .back-button:hover {
+            background-color: #689f38;
+        }
+
+        .slide-number {
+            font-size: 12px;
+            color: #0a2f2f;
+            background-color: #d4e157;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        .page-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            border-top: 2px solid #1a4f4f;
+        }
+
+        .left-section {
+            flex: 0 0 250px;
+            background-color: #052e2b;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            
+        }
+
+        .chauffeur-photo {
+            width: 150px;
+            height: 200px;
+            border: 3px solid white;
+            border-radius: 4px;
+            overflow: hidden;
+            background-image: url('assets/images/Picture1.png');
+        }
+
+        .chauffeur-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .chauffeur-label {
+            background-color: #b3c100;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+
+        .middle-section {
+            flex: 1;
+            padding: 60px 80px;
+            background-color: #052e2b;
+        }
+
+        .chauffeur-name {
+            color: #d4e157;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .chauffeur-details {
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .chauffeur-details p {
+            margin-bottom: 15px;
+        }
+
+        .right-section {
+            flex: 0 0 350px;
+            background-color: #052e2b;
+            padding: 40px 30px;
+            border-left: 2px solid #24643f;
+        }
+
+        .info-box {
+            background-color: #b3c100;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .arrival-info {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .arrival-info p {
+            margin-bottom: 20px;
+        }
+
+        .arrival-info strong {
+            font-weight: bold;
+        }
+
+        .logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .navigation {
+    position: absolute;
+    bottom: 04%;
+    right: 04%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.next-btn {
+    background-color: #67da6a;
+    color: black;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.next-btn:hover {
+    background-color: #1e7ba8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.navigation img {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+}
+
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+            .header {
+                padding: 15px 20px;
+                gap: 20px;
+            }
+
+            .page-title {
+                font-size: 28px;
+            }
+
+            .back-button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+
+            .content {
+                flex-direction: column;
+            }
+
+            .left-section {
+                flex: none;
+                flex-direction: row;
+                padding: 30px 20px;
+                border-right: none;
+                border-bottom: 2px solid #1a4f4f;
+            }
+
+            .middle-section {
+                padding: 30px 40px;
+            }
+
+            .chauffeur-name {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+
+            .chauffeur-details {
+                font-size: 18px;
+            }
+
+            .right-section {
+                flex: none;
+                padding: 30px;
+                border-left: none;
+                border-top: 2px solid #1a4f4f;
+            }
+
+            .info-box {
+                font-size: 20px;
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .arrival-info {
+                font-size: 16px;
+            }
+
+            .chauffeur-photo {
+                width: 120px;
+                height: 160px;
+            }
+
+            .chauffeur-label {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-button-wrapper">
+                <a href="6.html" class="next-btn">BACK</a>
+            </div>
+            <h1 class="page-title">Pick up from Airport</h1>
+        </div>
+
+        <div class="content">
+            <div class="left-section">
+                <div class="chauffeur-photo">
+                </div>
+                <div class="chauffeur-label">
+                    Rajesh Singh<br>Chauffer
+                </div>
+            </div>
+
+            <div class="middle-section">
+                <h2 class="chauffeur-name">Rajesh Singh</h2>
+                <div class="chauffeur-details">
+                    <p>Rajesh would be your chauffer during your entire stay in Mumbai</p>
+                    <p>He can be contacted at <strong>+ 91 9987022500</strong></p>
+                    <p><strong>Vehicle Number : MH 02 GH 9747</strong></p>
+                    <p><strong>Vehicle Model: Mercedes-Benz GLS  450D</strong></p>
+                </div>
+            </div>
+
+            <div class="right-section">
+                <div class="info-box">
+                    Mumbai Arrival at<br>Terminal 2
+                </div>
+                <div class="arrival-info">
+                    <p>The official name of the airport is <strong>Chhatrapati Shivaji Maharaj International Airport</strong>.</p>
+                    <p><strong>Arrival time 13:55</strong><br>
+                    You will arrive at Terminal 2 of the Mumbai airport</p>
+                    <p>We will be there to receive you on arrival</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+        <a href="8.html" class="next-btn">Next</a>
+        <img src="assets/images/V.ship_logo_green.svg" alt="Company Logo">
+    </div>
+    </div>
+</body>
+</html>

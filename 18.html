@@ -192,10 +192,12 @@
     .navigation {
       position: absolute;
       bottom: 25px;
-      right: 30px;
+      left: 30px;
       display: flex;
       align-items: center;
       gap: 15px;
+      width: 96%;
+      justify-content: space-between;
     }
 
     .next-btn {
@@ -216,6 +218,27 @@
       background-color: #1e7ba8;
       transform: translateY(-1px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .back-button {
+      background-color: #67da6a;
+      color: black;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .back-button:hover {
+      background-color: #58c05b;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
     .navigation img {
@@ -285,9 +308,6 @@
   <div class="container">
     <!-- ===== HEADER ===== -->
     <div class="header">
-      <div class="back-section">
-        <a href="12.html" class="next-btn">Back</a>
-      </div>
       <div class="heading-section">GSS Overview </div>
     </div>
 
@@ -327,8 +347,7 @@ Shared Services</div>
 
     <!-- ===== NAVIGATION ===== -->
     <div class="navigation">
-      
-      <!-- <a href="19.html" class="next-btn">Next</a> -->
+      <a href="17.html" class="back-button">BACK</a>
       <img src="assets/images/V.ship_logo_green.svg" alt="Company Logo">
     </div>
   </div>

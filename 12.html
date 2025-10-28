@@ -12,12 +12,21 @@
     }
 
     body {
+      background-image: url('assets/images/111.PNG');
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
       padding: 10px;
       margin: 0;
       height: 100vh;
-      overflow: hidden;
+      background-repeat: no-repeat;
+    /* CHANGE 'contain' to 'cover' */
+    background-position: center center;
+    background-size: cover; 
+    /* ADD background-attachment: fixed; to keep the background in place during scroll (optional) */
+    background-attachment: fixed; 
+    position: relative;
+    overflow: hidden;
+    width: 100%;
     }
 
     .header {
@@ -62,12 +71,13 @@
     }
 
     .container {
-      background-color: white;
-      padding: 20px;
+      
+      
+      padding: 80px 20px;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       height: calc(100vh - 80px);
-      overflow-y: auto;
+      
     }
 
     .timeline-wrapper {
@@ -464,6 +474,37 @@
       cursor: pointer;
     }
 
+     @media (max-width: 1400px) {
+      .top-items {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 25px;
+      column-gap: 16%;
+    }
+  }
+    .bottom-items {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 25px;
+      column-gap: 16%;
+    }
+     @media (max-width: 1200px) {
+      .top-items {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 25px;
+      column-gap: 15%;
+    }
+    .bottom-items {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 25px;
+      column-gap: 15%;
+    }
+
+    
+    }
+    
     /* ---------------- RESPONSIVE FOR 923px WIDTH ---------------- */
     @media screen and (max-width: 923px) {
       .top-items {
@@ -517,6 +558,18 @@
       .agenda-row {
         gap: 20px;
       }
+      .top-items {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 25px;
+      column-gap: 9%;
+    }
+    .bottom-items {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 25px;
+      column-gap: 10%;
+    }
     }
   </style>
 </head>
@@ -595,51 +648,7 @@
     </div>
 
     <!-- ===== AGENDA LIST ===== -->
-    <div class="agenda-list">
-      <!-- First row: 3 items -->
-      <div class="agenda-row">
-        <div class="agenda-item">
-          <div class="agenda-time">09:00 AM</div>
-          <div class="agenda-title">Welcome</div>
-        </div>
-        <div class="agenda-item">
-          <div class="agenda-time">09:30 AM</div>
-          <div class="agenda-title">Board Room</div>
-        </div>
-        <div class="agenda-item">
-          <div class="agenda-time">09:45 AM</div>
-          <div class="agenda-title">Marine HR Overview</div>
-        </div>
-      </div>
-
-      <!-- Second row: 3 items -->
-      <div class="agenda-row">
-        <div class="agenda-item">
-          <div class="agenda-time">10:00 AM</div>
-          <div class="agenda-title">Marine HR Floor Walk</div>
-        </div>
-        <div class="agenda-item">
-          <div class="agenda-time">11:00 AM</div>
-          <div class="agenda-title">GSS Overview</div>
-        </div>
-        <div class="agenda-item">
-          <div class="agenda-time">11:15 AM</div>
-          <div class="agenda-title">GSS Floor Walk</div>
-        </div>
-      </div>
-
-      <!-- Third row: 2 items -->
-      <div class="agenda-row">
-        <div class="agenda-item">
-          <div class="agenda-time">12:00 PM</div>
-          <div class="agenda-title">Cultural Performances & Townhall</div>
-        </div>
-        <div class="agenda-item">
-          <div class="agenda-time">01:00 PM</div>
-          <div class="agenda-title">Lunch with Seafarer</div>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- ===== INFO SECTION ===== -->
     <div class="info-section">
